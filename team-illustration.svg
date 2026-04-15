@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Creative Marketing Team Illustration</title>
+  <desc id="desc">An abstract illustration of a creative team discussing marketing growth with charts and devices.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="130" y1="80" x2="1080" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="220" y1="180" x2="980" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="260" y1="220" x2="940" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCD34D"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <filter id="soft" x="0" y="0" width="1200" height="900" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+
+  <circle cx="160" cy="180" r="130" fill="#F59E0B" fill-opacity="0.24" filter="url(#soft)"/>
+  <circle cx="1020" cy="720" r="170" fill="#38BDF8" fill-opacity="0.22" filter="url(#soft)"/>
+
+  <rect x="145" y="110" width="910" height="680" rx="40" fill="url(#panel)" stroke="#334155" stroke-width="2"/>
+
+  <rect x="210" y="180" width="520" height="300" rx="22" fill="#0B1224" stroke="#334155"/>
+  <rect x="245" y="235" width="230" height="16" rx="8" fill="#64748B" fill-opacity="0.45"/>
+  <rect x="245" y="268" width="140" height="12" rx="6" fill="#64748B" fill-opacity="0.4"/>
+
+  <path d="M270 420L360 350L430 380L510 305L620 260" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="270" cy="420" r="10" fill="#FBBF24"/>
+  <circle cx="360" cy="350" r="10" fill="#FBBF24"/>
+  <circle cx="430" cy="380" r="10" fill="#FBBF24"/>
+  <circle cx="510" cy="305" r="10" fill="#FBBF24"/>
+  <circle cx="620" cy="260" r="10" fill="#FBBF24"/>
+
+  <rect x="760" y="180" width="230" height="430" rx="24" fill="#0B1224" stroke="#334155"/>
+  <rect x="805" y="230" width="140" height="10" rx="5" fill="#64748B" fill-opacity="0.45"/>
+  <rect x="805" y="252" width="90" height="10" rx="5" fill="#64748B" fill-opacity="0.35"/>
+  <rect x="805" y="300" width="22" height="180" rx="11" fill="#334155"/>
+  <rect x="838" y="350" width="22" height="130" rx="11" fill="#475569"/>
+  <rect x="871" y="270" width="22" height="210" rx="11" fill="#64748B"/>
+  <rect x="904" y="320" width="22" height="160" rx="11" fill="#FBBF24"/>
+
+  <g>
+    <circle cx="320" cy="620" r="62" fill="#1D4ED8" fill-opacity="0.25"/>
+    <circle cx="320" cy="595" r="26" fill="#F8FAFC"/>
+    <rect x="275" y="632" width="90" height="62" rx="30" fill="#F8FAFC"/>
+  </g>
+
+  <g>
+    <circle cx="510" cy="635" r="68" fill="#F59E0B" fill-opacity="0.23"/>
+    <circle cx="510" cy="606" r="28" fill="#F8FAFC"/>
+    <rect x="462" y="646" width="96" height="66" rx="33" fill="#F8FAFC"/>
+  </g>
+
+  <g>
+    <circle cx="700" cy="620" r="62" fill="#14B8A6" fill-opacity="0.24"/>
+    <circle cx="700" cy="595" r="26" fill="#F8FAFC"/>
+    <rect x="655" y="632" width="90" height="62" rx="30" fill="#F8FAFC"/>
+  </g>
+
+  <rect x="215" y="730" width="750" height="18" rx="9" fill="#334155"/>
+  <rect x="215" y="760" width="410" height="14" rx="7" fill="#1E293B"/>
+</svg>
