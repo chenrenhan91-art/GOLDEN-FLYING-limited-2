@@ -24,7 +24,6 @@
 
       const Menu = (props) => <Icon {...props}><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></Icon>;
       const X = (props) => <Icon {...props}><path d="M18 6 6 18"/><path d="m6 6 12 12"/></Icon>;
-      const ChevronRight = (props) => <Icon {...props}><path d="m9 18 6-6-6-6"/></Icon>;
       const Target = (props) => <Icon {...props}><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></Icon>;
       const PenTool = (props) => <Icon {...props}><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></Icon>;
       const MonitorPlay = (props) => <Icon {...props}><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M10 7l5 3-5 3z"/><path d="M12 17v4"/><path d="M8 21h8"/></Icon>;
@@ -34,10 +33,6 @@
       const MapPin = (props) => <Icon {...props}><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></Icon>;
       const ArrowRight = (props) => <Icon {...props}><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></Icon>;
       const CheckCircle2 = (props) => <Icon {...props}><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></Icon>;
-      const Facebook = (props) => <Icon {...props}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></Icon>;
-      const Twitter = (props) => <Icon {...props}><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></Icon>;
-      const Linkedin = (props) => <Icon {...props}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></Icon>;
-      const Instagram = (props) => <Icon {...props}><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></Icon>;
 
       const Navbar = () => {
         const [isOpen, setIsOpen] = useState(false);
@@ -53,7 +48,6 @@
           { name: '首页', href: '#home' },
           { name: '关于我们', href: '#about' },
           { name: '核心服务', href: '#services' },
-          { name: '成功案例', href: '#portfolio' },
         ];
 
         return (
@@ -125,9 +119,6 @@
                   <a href="#contact" className="w-full sm:w-auto px-8 py-4 bg-amber-400 text-slate-900 rounded-full font-bold text-lg hover:bg-amber-300 transition-all flex items-center justify-center gap-2 group">
                     开启品牌增长
                     <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                  </a>
-                  <a href="#portfolio" className="w-full sm:w-auto px-8 py-4 bg-slate-800 text-white border border-slate-700 rounded-full font-bold text-lg hover:bg-slate-700 transition-all text-center">
-                    查看成功案例
                   </a>
                 </div>
               </div>
@@ -223,10 +214,6 @@
                       </div>
                     ))}
                   </div>
-
-                  <button className="flex items-center gap-2 text-amber-400 font-semibold hover:text-amber-300 transition-colors">
-                    了解我们的团队构成 <ChevronRight size={20} />
-                  </button>
                 </div>
               </div>
             </div>
@@ -235,6 +222,13 @@
       };
 
       const Contact = () => {
+        const [submitted, setSubmitted] = useState(false);
+
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          setSubmitted(true);
+        };
+
         return (
           <section id="contact" className="py-24 bg-slate-900 relative">
             <div className="container mx-auto px-6 md:px-12">
@@ -263,7 +257,7 @@
                         <MapPin className="text-amber-400 mt-1" size={24} />
                         <div>
                           <h4 className="text-sm text-gray-400 font-medium">公司地址</h4>
-                          <p className="text-lg leading-relaxed">浙江省杭州市</p>
+                          <p className="text-lg leading-relaxed">UNIT E01 10/F WONG KING INDUSTRIAL BUILDING 2-4 TAI YAU STREET SAN PO KONG KL</p>
                         </div>
                       </div>
                     </div>
@@ -271,30 +265,47 @@
                 </div>
 
                 <div className="lg:w-3/5 p-12 lg:p-16">
-                  <h3 className="text-2xl font-bold text-white mb-8">在线咨询</h3>
-                  <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-2">您的姓名</label>
-                        <input type="text" className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-colors" placeholder="如：王先生" />
+                  {submitted ? (
+                    <div className="h-full min-h-[420px] bg-slate-900 border border-slate-700 rounded-2xl p-8 md:p-10 flex flex-col justify-center items-start">
+                      <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-6">
+                        <CheckCircle2 size={32} />
                       </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-2">联系电话</label>
-                        <input type="tel" className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-colors" placeholder="您的手机号码" />
-                      </div>
+                      <h3 className="text-3xl font-bold text-white mb-4">提交成功</h3>
+                      <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                        感谢您的询盘，我们已收到您的信息。顾问团队会尽快与您回电沟通，请保持电话畅通。
+                      </p>
+                      <button type="button" onClick={() => setSubmitted(false)} className="px-6 py-3 bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold rounded-lg transition-colors">
+                        继续提交新询盘
+                      </button>
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-400 mb-2">公司/品牌名称</label>
-                      <input type="text" className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-colors" placeholder="贵公司的名称" />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-400 mb-2">需求简述</label>
-                      <textarea rows="4" className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-colors resize-none" placeholder="请简单描述您想了解的服务（如品牌设计、广告投放等）..."></textarea>
-                    </div>
-                    <button type="submit" className="w-full bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold text-lg py-4 rounded-lg transition-colors shadow-lg shadow-amber-400/20">
-                      提交询盘
-                    </button>
-                  </form>
+                  ) : (
+                    <>
+                      <h3 className="text-2xl font-bold text-white mb-8">在线咨询</h3>
+                      <form className="space-y-6" onSubmit={handleSubmit}>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div>
+                            <label className="block text-sm font-medium text-gray-400 mb-2">您的姓名</label>
+                            <input type="text" className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-colors" placeholder="如：王先生" />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-400 mb-2">联系电话</label>
+                            <input type="tel" className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-colors" placeholder="您的手机号码" />
+                          </div>
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-400 mb-2">公司/品牌名称</label>
+                          <input type="text" className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-colors" placeholder="贵公司的名称" />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-400 mb-2">需求简述</label>
+                          <textarea rows="4" className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-colors resize-none" placeholder="请简单描述您想了解的服务（如品牌设计、广告投放等）..."></textarea>
+                        </div>
+                        <button type="submit" className="w-full bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold text-lg py-4 rounded-lg transition-colors shadow-lg shadow-amber-400/20">
+                          提交询盘
+                        </button>
+                      </form>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
@@ -306,28 +317,17 @@
         return (
           <footer className="bg-slate-950 text-gray-400 py-12 border-t border-slate-800">
             <div className="container mx-auto px-6 md:px-12">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+              <div className="flex justify-center items-center">
                 <div className="flex items-center gap-2 text-xl font-bold text-white">
                   <div className="w-6 h-6 bg-amber-400 rounded-bl-lg rounded-tr-lg flex items-center justify-center text-slate-900">
                     <Rocket size={14} />
                   </div>
                   <span>Golden <span className="text-amber-400">Flying</span></span>
                 </div>
-
-                <div className="flex space-x-6">
-                  <a href="#" className="hover:text-amber-400 transition-colors"><Facebook size={20} /></a>
-                  <a href="#" className="hover:text-amber-400 transition-colors"><Twitter size={20} /></a>
-                  <a href="#" className="hover:text-amber-400 transition-colors"><Instagram size={20} /></a>
-                  <a href="#" className="hover:text-amber-400 transition-colors"><Linkedin size={20} /></a>
-                </div>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-sm">
+              <div className="mt-8 pt-8 border-t border-slate-800 flex justify-center items-center text-sm">
                 <p>&copy; {new Date().getFullYear()} Golden Flying Limited. 保留所有权利。</p>
-                <div className="flex space-x-4 mt-4 md:mt-0">
-                  <a href="#" className="hover:text-white transition-colors">隐私政策</a>
-                  <a href="#" className="hover:text-white transition-colors">服务条款</a>
-                </div>
               </div>
             </div>
           </footer>
